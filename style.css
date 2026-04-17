@@ -15,13 +15,6 @@
     .font-headline { font-family: 'Manrope', sans-serif; }
     .font-label { font-family: 'Space Grotesk', monospace; }
 
-    /* Typography Scales (Responsive) */
-    .display-lg { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; letter-spacing: -0.02em; }
-    .headline-lg { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; letter-spacing: -0.02em; }
-    .title { font-size: clamp(1.125rem, 3vw, 1.5rem); line-height: 1.4; }
-    .body { font-size: clamp(0.875rem, 2vw, 1rem); line-height: 1.6; }
-    .label-md { font-size: 0.875rem; line-height: 1.4; letter-spacing: 0.05em; }
-
     /* Gradient Utilities */
     .text-gradient {
         background: linear-gradient(135deg, #a1a6ff, #9197ff);
@@ -41,24 +34,42 @@
         -webkit-backdrop-filter: blur(20px);
     }
 
-    /* Ghost Border */
-    .ghost-border {
-        border: 1px solid rgba(70, 72, 77, 0.15);
-    }
-
     /* Ambient Shadows */
     .ambient-shadow {
-        box-shadow: 0 20px 60px rgba(12, 14, 18, 0.4);
+        box-shadow: 0 20px 60px rgba(12, 14, 18, 0.6);
     }
 
-    .glow-shadow {
-        box-shadow: 0 0 40px rgba(161, 166, 255, 0.15);
+    /* Animations (AOS Custom) */
+    .reveal {
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    .fade-up {
+        transform: translateY(40px);
+    }
+
+    .fade-left {
+        transform: translateX(40px);
+    }
+
+    .fade-right {
+        transform: translateX(-40px);
+    }
+    
+    .zoom-in {
+        transform: scale(0.95);
     }
 }
 
 /* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
     background: #0c0e12; 
@@ -74,4 +85,12 @@
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Bottom Nav Active State Styling */
+.mobile-nav-link.active .active-icon {
+    font-variation-settings: 'FILL' 1;
+}
+.mobile-nav-link:not(.active) .active-icon {
+    font-variation-settings: 'FILL' 0;
 }
