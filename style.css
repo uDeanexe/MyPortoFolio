@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        background-color: #0c0e12;
+        color: #f6f6fc;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+    }
+}
+
+@layer utilities {
+    .font-headline { font-family: 'Manrope', sans-serif; }
+    .font-label { font-family: 'Space Grotesk', monospace; }
+
+    /* Typography Scales */
+    .display-lg { font-size: 4.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+    .headline-lg { font-size: 3rem; line-height: 1.2; letter-spacing: -0.02em; }
+    .title { font-size: 1.5rem; line-height: 1.4; }
+    .body { font-size: 1rem; line-height: 1.6; }
+    .label-md { font-size: 0.875rem; line-height: 1.4; letter-spacing: 0.05em; }
+
+    /* Gradient Utilities */
+    .text-gradient {
+        background: linear-gradient(135deg, #a1a6ff, #9197ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #a1a6ff, #5860ff);
+    }
+
+    /* Glassmorphism */
+    .glass-panel {
+        background-color: rgba(35, 38, 44, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Ghost Border */
+    .ghost-border {
+        border: 1px solid rgba(70, 72, 77, 0.15);
+    }
+
+    /* Ambient Shadows */
+    .ambient-shadow {
+        box-shadow: 0 20px 60px rgba(12, 14, 18, 0.4);
+    }
+
+    .glow-shadow {
+        box-shadow: 0 0 40px rgba(161, 166, 255, 0.15);
+    }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0c0e12; 
+}
+::-webkit-scrollbar-thumb {
+    background: #23262c; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #46484d; 
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

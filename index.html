@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Kamaludin - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#f6f6fc",
+                        "surface-bright": "#292c32",
+                        "error-container": "#a70138",
+                        "on-tertiary-container": "#004d57",
+                        "surface-container-low": "#111318",
+                        "error-dim": "#d73357",
+                        "primary-container": "#9197ff",
+                        "primary": "#a1a6ff",
+                        "surface-container-high": "#1d2025",
+                        "surface-container-highest": "#23262c",
+                        "on-primary-container": "#020083",
+                        "surface-container": "#171a1f",
+                        "secondary-container": "#572e99",
+                        "tertiary": "#81ecff",
+                        "on-tertiary-fixed-variant": "#005762",
+                        "on-secondary-fixed-variant": "#6139a3",
+                        "secondary-fixed": "#ddc8ff",
+                        "on-error-container": "#ffb2b9",
+                        "surface-dim": "#0c0e12",
+                        "tertiary-fixed-dim": "#00d4ec",
+                        "on-error": "#490013",
+                        "surface-container-lowest": "#000000",
+                        "background": "#0c0e12",
+                        "secondary-fixed-dim": "#d2b7ff",
+                        "inverse-primary": "#3d44f1",
+                        "surface": "#0c0e12",
+                        "on-tertiary": "#005762",
+                        "on-tertiary-fixed": "#003840",
+                        "tertiary-dim": "#00d4ec",
+                        "primary-fixed": "#9197ff",
+                        "on-secondary-fixed": "#431585",
+                        "primary-dim": "#5860ff",
+                        "on-secondary": "#330070",
+                        "tertiary-container": "#00e3fd",
+                        "on-primary-fixed": "#000000",
+                        "surface-variant": "#23262c",
+                        "primary-fixed-dim": "#8087ff",
+                        "on-primary-fixed-variant": "#03009f",
+                        "inverse-surface": "#f9f9ff",
+                        "secondary-dim": "#b189f8",
+                        "outline": "#74757a",
+                        "on-primary": "#0400a6",
+                        "on-secondary-container": "#dcc7ff",
+                        "on-background": "#f6f6fc",
+                        "error": "#ff6e84",
+                        "secondary": "#b78efe",
+                        "outline-variant": "#46484d",
+                        "tertiary-fixed": "#00e3fd",
+                        "on-surface-variant": "#aaabb0",
+                        "surface-tint": "#a1a6ff",
+                        "inverse-on-surface": "#53555a"
+                    },
+                    fontFamily: {
+                        headline: ["Manrope", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        label: ["Space Grotesk", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary-fixed">
+
+    <!-- TopNavBar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md shadow-2xl shadow-indigo-500/10 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+            <a href="#home" class="text-2xl font-black text-white font-headline tracking-tight uppercase">
+                Kamaludin
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-headline tracking-tight">
+                <a class="nav-link active text-indigo-400 font-bold border-b-2 border-indigo-400 pb-1 scale-95 transition-transform" href="#home" data-target="home">Beranda</a>
+                <a class="nav-link text-slate-400 hover:text-white transition-colors hover:bg-white/5 py-1 px-3 rounded scale-95 transition-transform" href="#gallery" data-target="gallery">Pengalaman</a>
+                <a class="nav-link text-slate-400 hover:text-white transition-colors hover:bg-white/5 py-1 px-3 rounded scale-95 transition-transform" href="#about" data-target="about">Profil</a>
+                <a class="nav-link text-slate-400 hover:text-white transition-colors hover:bg-white/5 py-1 px-3 rounded scale-95 transition-transform" href="#contact" data-target="contact">Kontak</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-gradient-primary text-on-primary-fixed font-semibold px-6 py-2.5 rounded-xl hover:opacity-90 transition-opacity flex items-center gap-2">
+                    Hire Me
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden flex-col bg-slate-900 border-t border-white/10 p-4 space-y-4 md:hidden">
+            <a href="#home" class="text-white font-bold">Beranda</a>
+            <a href="#gallery" class="text-slate-400 hover:text-white">Pengalaman</a>
+            <a href="#about" class="text-slate-400 hover:text-white">Profil</a>
+            <a href="#contact" class="text-slate-400 hover:text-white">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-20">
+        
+        <!-- ================= HOME SECTION ================= -->
+        <section id="home" class="relative min-h-[90vh] flex items-center py-20 overflow-hidden section-scroll">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-tertiary/5 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="col-span-1 lg:col-span-7 flex flex-col gap-8">
+                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-panel ghost-border w-fit">
+                        <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        <span class="font-label text-on-surface-variant label-md">Available for opportunities</span>
+                    </div>
+                    <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-tight">
+                        Membangun <br/>
+                        <span class="text-gradient">Sistem Bisnis</span><br/>
+                        Modern
+                    </h1>
+                    <p class="font-body title text-on-surface-variant max-w-2xl leading-relaxed">
+                        Saya seorang Software Engineer yang ahli dalam pengembangan aplikasi desktop dan web menggunakan .NET, Laravel, dan Python. Terbiasa membangun aplikasi end-to-end dari perancangan arsitektur hingga implementasi GUI dan database.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#gallery" class="bg-gradient-primary text-on-primary-fixed font-headline font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center gap-2 group">
+                            Lihat Pengalaman & Proyek
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <a href="#about" class="glass-panel ghost-border text-primary font-headline font-semibold px-8 py-4 rounded-xl hover:bg-surface-variant transition-colors">
+                            Profil Saya
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-span-1 lg:col-span-5 relative h-[600px] hidden lg:block">
+                    <div class="absolute top-10 right-0 w-4/5 h-[400px] rounded-2xl overflow-hidden ambient-shadow z-10">
+                        <img alt="Code Snippet" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7boPsJYxTeWpE1OQA4xAfMHLj7wZd7_JK9NrMPiRpYt-s1ZLvdDUKfS4QtYIIBHaRFsKGE8zEuT9M-VCJ__1GVgMzb8TIGM-A27nkUEITzD9nqPSpOrUAhkG0LH3c-b_pf_DYBBzT5k-lgdS6S3kQpTsaQgNEYcEtCIQ4R_uoRCpnuRZHmfZ8cqTmFAZBMQnCEPDlfgI3uMZ0H8DWmAqBjfPn1GGSRummXtnoJWBl2JKLN_Wqo4-emeLEjTkuhhzggupM3-c6kdc"/>
+                    </div>
+                    <div class="absolute bottom-10 left-0 w-3/4 p-6 glass-panel ghost-border rounded-2xl z-20 ambient-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">dataset</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline font-bold text-lg">System Architecture</h3>
+                                <p class="font-label text-on-surface-variant text-xs uppercase tracking-widest">MVC & RESTful API</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-primary w-[85%] rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <section id="gallery" class="py-24 bg-surface-container-low relative section-scroll">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                
+                <header class="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
+                    <div class="max-w-3xl">
+                        <h2 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                            Proyek & <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Pengalaman</span>.
+                        </h2>
+                        <p class="font-body text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                            Pengalaman profesional dan proyek personal dalam membangun aplikasi desktop, web backend, dan integrasi perangkat (seperti RS-232 floor scales).
+                        </p>
+                    </div>
+                    
+                    <nav aria-label="Project Filters" class="flex flex-wrap gap-3 items-center" id="project-filters">
+                        <button class="filter-btn active bg-surface-variant text-on-surface font-label text-sm px-5 py-2.5 rounded-full transition-colors border border-outline-variant/30 font-medium" data-target="all">Semua</button>
+                        <button class="filter-btn bg-surface-container-lowest text-on-surface-variant font-label text-sm px-5 py-2.5 rounded-full hover:bg-surface-variant transition-colors border border-outline-variant/15 font-medium flex items-center gap-2" data-target="python">
+                            <span class="material-symbols-outlined text-[18px]">terminal</span>
+                            Python & Desktop
+                        </button>
+                        <button class="filter-btn bg-surface-container-lowest text-on-surface-variant font-label text-sm px-5 py-2.5 rounded-full hover:bg-surface-variant transition-colors border border-outline-variant/15 font-medium" data-target="web">Web Backend & .NET</button>
+                    </nav>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="project-grid">
+                    
+                    <!-- Project For Sale (Placeholder) -->
+                    <article class="project-card bg-surface-container-high rounded-xl group relative overflow-hidden flex flex-col min-h-[400px] transition-all duration-500 hover:scale-[1.02] border-2 border-primary/40 shadow-[0_0_20px_rgba(161,166,255,0.1)]" data-category="web">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4 justify-between">
+                                    <span class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-label text-xs flex items-center gap-1 px-3 py-1.5 rounded-full font-bold shadow-lg shadow-primary/20">
+                                        <span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                                        SIAP JUAL / RILIS
+                                    </span>
+                                     <span class="material-symbols-outlined text-3xl text-primary">shopping_bag</span>
+                                </div>
+                                <h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface mb-3">[Nama Produk / Project Anda]</h2>
+                                <p class="font-body text-on-surface-variant text-sm line-clamp-4">
+                                    [Deskripsi singkat mengenai produk digital yang sedang Anda bangun dan siap dijual ke publik. Sebutkan kelebihan atau masalah apa yang dipecahkan aplikasi ini.]
+                                </p>
+                                <div class="flex gap-2 mt-4 flex-wrap">
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">[Tech 1]</span>
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">[Tech 2]</span>
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">[Tech 3]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Denso -->
+                    <article class="project-card col-span-1 lg:col-span-2 bg-surface-container rounded-xl group relative overflow-hidden flex flex-col justify-between min-h-[400px] transition-all duration-500 hover:scale-[1.02] border border-outline-variant/10" data-category="web">
+                        <div class="p-8 pb-4 relative z-10 flex flex-col h-full">
+                            <div>
+                                <div class="flex gap-3 mb-4 flex-wrap">
+                                    <span class="bg-surface-variant/80 backdrop-blur-sm text-on-surface font-label text-xs px-3 py-1 rounded-full border border-outline-variant/30">ASP.NET Core</span>
+                                    <span class="bg-surface-variant/80 backdrop-blur-sm text-on-surface font-label text-xs px-3 py-1 rounded-full border border-outline-variant/30">C#</span>
+                                    <span class="bg-surface-variant/80 backdrop-blur-sm text-on-surface font-label text-xs px-3 py-1 rounded-full border border-outline-variant/30">Python</span>
+                                </div>
+                                <p class="text-tertiary font-label text-sm uppercase tracking-wider mb-2">Denso Manufacturing Indonesia</p>
+                                <h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-3">Internal & Automation Tools</h2>
+                                <p class="font-body text-on-surface-variant text-base">
+                                    Pengembangan dan integrasi modul backend menggunakan pola MVC. Maintenance serta debugging aplikasi internal berbasis .NET Core dan Xamarin.
+                                    Juga mengembangkan tool otomatisasi proses administrasi menggunakan skrip Python.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-8 pt-0 mt-auto opacity-70 group-hover:opacity-100 transition-opacity flex justify-end">
+                            <span class="material-symbols-outlined text-6xl text-on-surface-variant">settings_applications</span>
+                        </div>
+                    </article>
+
+                    <!-- Scalify -->
+                    <article class="project-card bg-surface-container rounded-xl group relative overflow-hidden flex flex-col min-h-[400px] transition-all duration-500 hover:scale-[1.02] border border-outline-variant/10" data-category="python">
+                        <div class="p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                     <span class="material-symbols-outlined text-4xl text-primary">scale</span>
+                                </div>
+                                <h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface mb-3">FloorScale Apps (Scalify)</h2>
+                                <p class="font-body text-on-surface-variant text-sm line-clamp-4">
+                                    Aplikasi timbangan desktop standalone (PyQt5). Mengintegrasikan komunikasi RS-232 (serial port) untuk membaca data berat secara real-time. Dilengkapi validasi operasional, reporting system siap cetak (Crystal Report style), dan kontrol lisensi regeister key.
+                                </p>
+                                <div class="flex gap-2 mt-4 flex-wrap">
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">Python</span>
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">PyQt5</span>
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">Hardware API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PMB Desktop -->
+                    <article class="project-card bg-surface-container rounded-xl group relative overflow-hidden flex flex-col min-h-[400px] transition-all duration-500 hover:scale-[1.02] border border-outline-variant/10" data-category="python">
+                        <div class="p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
+                            <div>
+                                <p class="text-tertiary font-label text-xs uppercase tracking-wider mb-2">Permata Maju Bersama</p>
+                                <h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface mb-3">Sistem Timbangan Digital</h2>
+                                <p class="font-body text-on-surface-variant text-sm line-clamp-4">
+                                    Membangun aplikasi pembacaan data dari floor scale. Mendesain alur aplikasi mulai dari penerimaan input, validasi otomatis, sistem monitoring secara real-time, dan pencatatan riwayat transaksi serta struktur database.
+                                </p>
+                                <div class="flex gap-2 mt-4 flex-wrap">
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">Tkinter</span>
+                                    <span class="bg-surface-variant text-on-surface font-label text-[10px] px-2 py-1 rounded border border-outline-variant/15">PyQt</span>
+                                </div>
+                            </div>
+                             <div class="text-right">
+                                <span class="material-symbols-outlined text-4xl text-on-surface-variant opacity-50">precision_manufacturing</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Military 3D -->
+                    <article class="project-card col-span-1 lg:col-span-2 bg-surface-container rounded-xl group relative overflow-hidden flex flex-col min-h-[300px] transition-all duration-500 hover:scale-[1.02] border border-outline-variant/10" data-category="web">
+                        <div class="p-8 flex flex-col lg:flex-row gap-6 items-center flex-grow justify-between relative z-10 h-full">
+                            <div class="lg:w-2/3">
+                                <p class="text-tertiary font-label text-xs uppercase tracking-wider mb-2">Military Industrial Complex</p>
+                                <h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface mb-3">Corrector 3D Model</h2>
+                                <p class="font-body text-on-surface-variant text-sm">
+                                    Proyek freelance dalam validasi dan koreksi geometri aset-aset model 3D. 
+                                    Fokus pada optimasi model untuk efisiensi performance tanpa mengurangi kualitas visual yang disyaratkan dalam spesifikasi teknis platform militer.
+                                </p>
+                            </div>
+                            <div class="lg:w-1/3 flex justify-end">
+                                <div class="w-24 h-24 rounded-full bg-surface-variant flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-5xl text-primary">view_in_ar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="py-24 bg-background relative section-scroll">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full flex flex-col gap-24">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+                    <div class="lg:col-span-5 relative order-2 lg:order-1">
+                        <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low isolate">
+                            <div class="absolute inset-0 bg-primary/10 blur-[60px] -z-10 rounded-full scale-75"></div>
+                            <img alt="Developer Workspace" class="w-full h-full object-cover mix-blend-luminosity opacity-80 hover:opacity-100 hover:mix-blend-normal transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ezZ5jlyGmWsEzFX_G5g5pQJbqS1z7o0LjhSCNj-qQ4edqTUkUDYRpozGgnPeQzxP9QrPjmfqPmdmyVPpM00aQNobgTi_HHlwtNfNwdiu2_Y9yj_0ipX_05xc4CdS9ynsYrQTHQ4Dj0x6QExkQiGstsxDlcRWJvr_3mt3i1KVxD6YMOkYOGZax3j_r0I-rdO55BSbGh0oZIUx0D1AMyNpsX8MdUl2WktRAjjJYW1h58T0oyKwblpgTlIeSYUS1rHxI0RiBWnDw8g"/>
+                            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 lg:-right-12 bg-surface-container-highest/80 backdrop-blur-[20px] p-6 rounded-lg shadow-2xl border border-outline-variant/15 w-64">
+                            <p class="font-label text-sm text-tertiary mb-1 uppercase tracking-wider">Universitas Bani Saleh</p>
+                            <p class="font-body text-on-surface font-medium">Fakultas Ilmu Teknologi & Digital (IPK 3.60)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-7 flex flex-col justify-center order-1 lg:order-2">
+                        <p class="font-label text-tertiary text-sm tracking-[0.2em] mb-4 uppercase">Profil Singkat</p>
+                        <h2 class="font-headline text-5xl lg:text-6xl font-extrabold tracking-tight text-on-surface mb-8 leading-tight">
+                            Membangun sistem yang <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">handal</span> dan solid.
+                        </h2>
+                        <div class="space-y-6 text-lg text-on-surface-variant font-body leading-relaxed max-w-2xl">
+                            <p>
+                                Berpengalaman dalam pengembangan GUI desktop dan aplikasi web backend. Saya terbiasa mengelola sistem basis data dengan MySQL atau Microsoft SQL Server.
+                            </p>
+                            <p>
+                                Spesialisasi saya meliputi teknologi C#, Python (PyQt & Tkinter), PHP (Laravel), dan arsitektur pengembangan perangkat lunak berskala seperti RESTful API, Entity Framework, Eloquent, serta MVC Design Pattern.
+                            </p>
+                        </div>
+                        <div class="mt-12 flex items-center gap-6">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">translate</span>
+                                <span class="font-label text-sm text-on-surface">Indonesia & English</span>
+                            </div>
+                            <div class="h-8 w-px bg-outline-variant/30"></div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+                                <span class="font-label text-sm text-on-surface">Information Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-low rounded-xl p-8 lg:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="mb-12 relative z-10">
+                        <h3 class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-2">Technical Arsenal</h3>
+                        <p class="font-body text-on-surface-variant">Tools, Framework, dan Bahasa yang saya gunakan sehari-hari.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                        <!-- Languages -->
+                        <div class="bg-surface-container rounded-lg p-6 border border-outline-variant/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-primary">data_object</span>
+                                <h4 class="font-headline font-bold text-lg">Pemrograman</h4>
+                            </div>
+                            <ul class="text-on-surface-variant text-sm space-y-2">
+                                <li>C#</li>
+                                <li>Python</li>
+                                <li>PHP</li>
+                                <li>HTML / CSS / JS</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Frameworks -->
+                        <div class="bg-surface-container rounded-lg p-6 border border-outline-variant/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-primary">widgets</span>
+                                <h4 class="font-headline font-bold text-lg">Frameworks</h4>
+                            </div>
+                            <ul class="text-on-surface-variant text-sm space-y-2">
+                                <li>.NET & ASP.NET Core</li>
+                                <li>Laravel</li>
+                                <li>PyQt & Tkinter</li>
+                                <li>CustomTkinter</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Database & ORM -->
+                        <div class="bg-surface-container rounded-lg p-6 border border-outline-variant/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-primary">database</span>
+                                <h4 class="font-headline font-bold text-lg">Database</h4>
+                            </div>
+                            <ul class="text-on-surface-variant text-sm space-y-2">
+                                <li>MySQL</li>
+                                <li>Microsoft SQL Server</li>
+                                <li class="pt-2 border-t border-white/5 mt-2 text-xs text-tertiary">ORM:</li>
+                                <li>Entity Framework</li>
+                                <li>Eloquent ORM</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Arch -->
+                        <div class="bg-surface-container rounded-lg p-6 border border-outline-variant/10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-primary">schema</span>
+                                <h4 class="font-headline font-bold text-lg">Arsitektur</h4>
+                            </div>
+                            <ul class="text-on-surface-variant text-sm space-y-2">
+                                <li>RESTful API</li>
+                                <li>MVC Patern</li>
+                                <li>User Authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="py-24 bg-surface-container-low relative section-scroll border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-on-surface mb-6">
+                            Mari Berkolaborasi.
+                        </h2>
+                        <p class="font-body text-lg text-on-surface-variant mb-12 max-w-md leading-relaxed">
+                            Mencari Software Engineer handal untuk membangun sistem bisnis atau aplikasi portabel Anda? Hubungi saya sekarang juga.
+                        </p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/15 text-primary">
+                                    <span class="material-symbols-outlined">call</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest mb-1">Telepon / WhatsApp</p>
+                                    <p class="text-lg font-headline font-bold text-on-surface">+62-899-6940-865</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/15 text-primary">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest mb-1">Alamat Email</p>
+                                    <p class="text-lg font-headline font-bold text-on-surface">kamaludinpasaribu8@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <a href="https://github.com/uDeanexe" target="_blank" class="inline-flex items-center gap-3 bg-surface-container hover:bg-surface-container-highest px-6 py-3 rounded-lg border border-outline-variant/15 group transition-colors">
+                                    <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">code</span>
+                                    <span class="font-label text-sm text-on-surface">Lihat GitHub: uDeanexe</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden lg:block bg-surface-container-highest/30 backdrop-blur-md p-10 rounded-2xl border border-outline-variant/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
+                        <div class="text-center py-10">
+                            <span class="material-symbols-outlined text-6xl text-primary opacity-50 mb-4">waving_hand</span>
+                            <h3 class="text-2xl font-headline font-bold mb-2">Terima Kasih,</h3>
+                            <p class="text-on-surface-variant">Telah mengunjungi portofolio saya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 bg-slate-950 font-space-grotesk uppercase tracking-widest text-xs flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 md:gap-0 mt-auto">
+        <div class="text-lg font-bold text-slate-200">
+            Kamaludin
+        </div>
+        <div class="text-slate-500 text-center">
+            © 2026 Kamaludin - Software Engineer.
+        </div>
+        <div class="flex space-x-6">
+            <a href="https://github.com/uDeanexe" class="text-slate-500 hover:text-indigo-300 transition-colors">Github</a>
+            <a href="mailto:kamaludinpasaribu8@gmail.com" class="text-slate-500 hover:text-indigo-300 transition-colors">Email</a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
