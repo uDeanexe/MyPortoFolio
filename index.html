@@ -249,7 +249,7 @@
                                 <h2 class="font-headline text-2xl md:text-3xl font-bold text-white mb-3">Internal &
                                     Automation Tools</h2>
                                 <p class="font-body text-slate-400 text-sm md:text-base max-w-xl">
-                                    Pengembangan dan integrasi modul backend menggunakan pola MVC. Maintenance aplikasi
+                                    Pengembangan dan integrasi modul backend menggunakan pola MVVM dan RESTful API. Maintenance aplikasi
                                     internal berbasis .NET Core dan Xamarin. Pengembangan otomatisasi menggunakan
                                     Python.
                                 </p>
@@ -306,36 +306,63 @@
 
                     <!-- Scalify -->
                     <article
-                        class="reveal fade-up project-card bg-surface-container rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-white/5 hover:border-white/10 transition-all"
+                        class="reveal fade-up project-card md:col-span-2 lg:col-span-2 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/30 hover:border-primary/60 transition-all cursor-pointer"
                         data-category="python">
+                        <a href="assets/floorscale/index.html" class="absolute inset-0 z-30"></a>
                         <div class="p-6 md:p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div
-                                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                                        class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/40">
                                         <span class="material-symbols-outlined text-2xl text-primary">scale</span>
                                     </div>
                                 </div>
                                 <h2 class="font-headline text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
                                     FloorScale Apps (Scalify)</h2>
-                                <p class="font-body text-slate-400 text-sm line-clamp-4">
-                                    Aplikasi timbangan desktop standalone (PyQt5) dengan komunikasi RS-232, reporting
-                                    system, dan kontrol lisensi.
+                                <p class="font-body text-slate-400 text-sm mb-4">
+                                    Sistem timbangan digital desktop profesional dengan RS-232 integration, real-time monitoring, advanced reporting, license management, dan IoT connectivity. Solusi enterprise-grade untuk industri logistik.
                                 </p>
+                                <ul class="text-slate-400 text-xs space-y-1.5">
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                        RS-232 Hardware Integration
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                        Real-time Data Monitoring
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                        Advanced Reporting System
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="flex gap-2 flex-wrap">
-                                <span
-                                    class="bg-black/40 text-white font-label text-[10px] px-2 py-1 rounded border border-white/5">Python</span>
-                                <span
-                                    class="bg-black/40 text-white font-label text-[10px] px-2 py-1 rounded border border-white/5">PyQt5</span>
+                            <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                                <div class="flex gap-2 flex-wrap">
+                                    <span
+                                        class="bg-primary/20 text-primary font-label text-[10px] px-2 py-1 rounded border border-primary/40">Python</span>
+                                    <span
+                                        class="bg-primary/20 text-primary font-label text-[10px] px-2 py-1 rounded border border-primary/40">PyQt5</span>
+                                    <span
+                                        class="bg-primary/20 text-primary font-label text-[10px] px-2 py-1 rounded border border-primary/40">SQLite</span>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </div>
                             </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                            <span
+                                class="material-symbols-outlined text-[120px] md:text-[160px] text-primary">precision_manufacturing</span>
                         </div>
                     </article>
 
                     <!-- WeightCore -->
                     <article
-                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all"
+                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all cursor-pointer"
                         data-category="python">
+                        <a href="assets/weightcore/index.html" class="absolute inset-0 z-30"></a>
                         <div class="p-6 md:p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
                             <div>
                                 <div class="flex items-center gap-3 mb-4 justify-between">
@@ -351,11 +378,16 @@
                                     tinggi dan fitur perangkat keras yang lebih lengkap.
                                 </p>
                             </div>
-                            <div class="flex gap-2 flex-wrap">
-                                <span
-                                    class="bg-black/40 text-white font-label text-[10px] px-2 py-1 rounded border border-white/5">PyQt5</span>
-                                <span
-                                    class="bg-black/40 text-white font-label text-[10px] px-2 py-1 rounded border border-white/5">Python</span>
+                            <div class="flex items-center gap-3 pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex gap-2 flex-wrap">
+                                    <span
+                                        class="bg-primary/10 text-primary font-label text-[10px] px-2 py-1 rounded border border-primary/20">PyQt5</span>
+                                    <span
+                                        class="bg-primary/10 text-primary font-label text-[10px] px-2 py-1 rounded border border-primary/20">Python</span>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </div>
                             </div>
                         </div>
                         <div
@@ -367,8 +399,9 @@
 
                     <!-- PlayMusic -->
                     <article
-                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all"
+                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all cursor-pointer"
                         data-category="mobile">
+                        <a href="assets/playmusic/index.html" class="absolute inset-0 z-30"></a>
                         <div class="p-6 md:p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
                             <div>
                                 <div class="flex items-center gap-3 mb-4 justify-between">
@@ -380,7 +413,7 @@
                                 <h2 class="font-headline text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
                                     PlayMusic</h2>
                                 <p class="font-body text-slate-400 text-sm line-clamp-4">
-                                    Pemutar musik lintas platform yang ringan dan modern dengan antarmuka dinamis dan
+                                        Pemutar musik lintas platform (Mobile & Desktop) yang ringan dan modern dengan antarmuka dinamis dan
                                     pengorganisasian pustaka lagu.
                                 </p>
                             </div>
@@ -400,8 +433,9 @@
 
                     <!-- App Kasir -->
                     <article
-                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all"
+                        class="reveal fade-up project-card bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl group relative overflow-hidden flex flex-col min-h-[350px] md:min-h-[400px] border border-primary/20 hover:border-primary/50 transition-all cursor-pointer"
                         data-category="python">
+                        <a href="assets/pos/index.html" class="absolute inset-0 z-30"></a>
                         <div class="p-6 md:p-8 flex flex-col gap-4 flex-grow justify-between relative z-10 h-full">
                             <div>
                                 <div class="flex items-center gap-3 mb-4 justify-between">
@@ -600,7 +634,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Desktop Footer (Slightly adjusted padding for mobile bottom nav) -->
@@ -609,7 +642,6 @@
         <div class="font-bold text-white">Kamaludin</div>
         <div class="text-slate-500 text-center">© 2026 Kamaludin. All rights reserved.</div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
