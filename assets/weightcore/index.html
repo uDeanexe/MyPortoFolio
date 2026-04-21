@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>WeightCore - Framework Architecture</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#f6f6fc",
+                        "surface-container-low": "#111318",
+                        "primary-container": "#9197ff",
+                        "primary": "#a1a6ff",
+                        "surface-container-high": "#1d2025",
+                        "surface-container": "#171a1f",
+                        "tertiary": "#81ecff",
+                        "background": "#0c0e12",
+                    },
+                    fontFamily: {
+                        headline: ["Manrope", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        label: ["Space Grotesk", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        @layer utilities {
+            .font-headline { font-family: 'Manrope', sans-serif; }
+            .font-label { font-family: 'Space Grotesk', monospace; }
+            .text-gradient { background: linear-gradient(135deg, #ffffff, #a1a6ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            .reveal { opacity: 0; transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); transform: translateY(40px); }
+            .reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0c0e12; }
+        ::-webkit-scrollbar-thumb { background: #23262c; border-radius: 4px; }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-20">
+            <a href="../../index.html" class="text-xl font-bold text-white font-headline tracking-tight uppercase hover:text-primary transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Kamaludin
+            </a>
+            <h1 class="text-lg md:text-xl font-headline font-bold text-primary">WeightCore Docs</h1>
+            <a href="../../index.html#gallery" class="text-slate-400 hover:text-white transition-colors"><span class="material-symbols-outlined">close</span></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-20">
+        <div class="max-w-5xl mx-auto px-6 md:px-8">
+
+            <!-- Hero Section -->
+            <section class="mb-16 py-12 text-center reveal">
+                <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-tertiary/30 bg-tertiary/5 backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-[14px] text-tertiary animate-spin-slow">sync</span>
+                    <span class="font-label text-tertiary text-xs tracking-wide uppercase">Core System - On Going</span>
+                </div>
+                <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white mb-4">Weight<span class="text-gradient">Core</span></h2>
+                <p class="text-slate-400 text-lg max-w-3xl mx-auto">Framework dasar berkinerja tinggi yang mengadopsi konsep ketangguhan <i>FloorScale</i>, namun dioptimalkan secara khusus untuk memenuhi skala industri <b>TruckScale (Jembatan Timbang)</b>.</p>
+            </section>
+
+            <!-- Architecture & Details -->
+            <section class="mb-20 reveal">
+                <div class="bg-surface-container rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] pointer-events-none"></div>
+                    
+                    <h3 class="font-headline text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">developer_board</span> Filosofi Engine
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <p class="font-body text-slate-300 leading-relaxed">
+                                Mengadaptasi stabilitas dari aplikasi FloorScale, WeightCore untuk <b>TruckScale</b> dibangun di atas arsitektur <b>Multithreading</b> untuk mengatasi tingginya arus data dari indikator timbangan truk berkapasitas tonase raksasa.
+                            </p>
+                            <p class="font-body text-slate-300 leading-relaxed">
+                                WeightCore memisahkan proses pembacaan <i>hardware</i>, pemrosesan logik keluar-masuk truk, dan pembaruan UI secara asinkron. Hal ini menjamin kelancaran sistem dalam menghindari <i>lag</i> saat kendaraan sedang berada di atas platform timbangan.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-black/50 border border-white/5 rounded-2xl p-6 relative">
+                            <p class="font-label text-xs text-primary mb-4 uppercase tracking-widest">Struktur Threading (Konsep)</p>
+                            <pre class="text-slate-400 text-xs overflow-x-auto leading-relaxed"><code>[Main Thread] --&gt; GUI & User Event
+     │
+     ├─&gt; [Thread 1] --&gt; Serial Port Listener
+     │      └─&gt; Signal Emit (Clean Data)
+     │
+     ├─&gt; [Thread 2] --&gt; Data Validator / Parser
+     │
+     └─&gt; [Thread 3] --&gt; Database I/O Sync</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagrams -->
+            <section class="mb-20 reveal">
+                <h3 class="font-headline text-2xl font-bold text-white mb-8 text-center">Konsep Visual Modul</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="group rounded-3xl overflow-hidden border border-white/10 bg-surface-container aspect-video relative shadow-xl">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-container-high to-background">
+                            <span class="material-symbols-outlined text-[100px] text-white/5 group-hover:scale-110 transition-transform duration-700">schema</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent p-6 flex flex-col justify-end">
+                            <h4 class="font-headline font-bold text-white text-lg">Alur Pipeline Data</h4>
+                            <p class="text-xs text-primary uppercase mt-1">Konsep Arsitektur Inti</p>
+                        </div>
+                    </div>
+                    <div class="group rounded-3xl overflow-hidden border border-white/10 bg-surface-container aspect-video relative shadow-xl">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-bl from-surface-container-high to-background">
+                            <span class="material-symbols-outlined text-[100px] text-white/5 group-hover:scale-110 transition-transform duration-700">extension</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent p-6 flex flex-col justify-end">
+                            <h4 class="font-headline font-bold text-white text-lg">Ekspansi Plugin</h4>
+                            <p class="text-xs text-primary uppercase mt-1">Modular & Scalable</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roadmap -->
+            <section class="mb-20 reveal">
+                <h3 class="font-headline text-2xl font-bold text-white mb-8 text-center">Roadmap Pengembangan</h3>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <div class="flex items-center gap-4 p-5 rounded-2xl bg-primary/10 border border-primary/30">
+                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Tahap 1: Core Engine & Serial Listener</h4>
+                            <p class="text-xs text-slate-400 mt-1">Berhasil memecah thread pembacaan hardware dari UI.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-5 rounded-2xl bg-surface-container border border-tertiary/30">
+                        <span class="material-symbols-outlined text-tertiary animate-pulse">sync</span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Tahap 2: Modularisasi UI</h4>
+                            <p class="text-xs text-slate-400 mt-1">Membuat sistem dashboard yang otomatis mendeteksi plugin (Addons).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-5 rounded-2xl bg-surface-container border border-white/10 opacity-50">
+                        <span class="material-symbols-outlined text-slate-500">schedule</span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Tahap 3: API & Cloud Sync</h4>
+                            <p class="text-xs text-slate-400 mt-1">Implementasi RESTful Client terintegrasi untuk melempar data timbangan ke web server.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-8 bg-black border-t border-white/5 font-label uppercase tracking-widest text-[10px] md:text-xs text-slate-500 text-center">
+        <p>© 2026 Kamaludin. WeightCore Engine Docs.</p>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        reveals.forEach(reveal => observer.observe(reveal));
+    </script>
+</body>
+</html>

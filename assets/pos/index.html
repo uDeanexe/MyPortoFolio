@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>POS System - Project Case Study</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#f6f6fc",
+                        "surface-bright": "#292c32",
+                        "surface-container-low": "#111318",
+                        "primary-container": "#9197ff",
+                        "primary": "#a1a6ff",
+                        "surface-container-high": "#1d2025",
+                        "surface-container-highest": "#23262c",
+                        "on-primary-container": "#020083",
+                        "surface-container": "#171a1f",
+                        "tertiary": "#81ecff",
+                        "on-background": "#f6f6fc",
+                        "background": "#0c0e12",
+                        "surface": "#0c0e12",
+                        "surface-variant": "#23262c",
+                        "outline": "#74757a",
+                    },
+                    fontFamily: {
+                        headline: ["Manrope", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        label: ["Space Grotesk", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer utilities {
+            .font-headline { font-family: 'Manrope', sans-serif; }
+            .font-label { font-family: 'Space Grotesk', monospace; }
+            .text-gradient {
+                background: linear-gradient(135deg, #ffffff, #a1a6ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .reveal {
+                opacity: 0;
+                transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            .fade-up { transform: translateY(40px); }
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0c0e12; }
+        ::-webkit-scrollbar-thumb { background: #23262c; border-radius: 4px; }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-20">
+            <a href="../../index.html" class="text-xl font-bold text-white font-headline tracking-tight uppercase hover:text-primary transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Kamaludin
+            </a>
+            <h1 class="text-lg md:text-xl font-headline font-bold text-primary">POS Apps</h1>
+            <a href="../../index.html#gallery" class="text-slate-400 hover:text-white transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-20">
+        <div class="max-w-6xl mx-auto px-6 md:px-8">
+
+            <!-- Hero Section -->
+            <section class="mb-20 py-12 text-center reveal fade-up">
+                <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#a1a6ff]"></span>
+                    <span class="font-label text-primary text-xs tracking-wide">Business Desktop App</span>
+                </div>
+                <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white mb-4">Point of Sale <span class="text-gradient">(POS)</span></h2>
+                <p class="text-slate-400 text-lg max-w-3xl mx-auto">Konsep desain sistem manajemen kasir modern untuk pencatatan penjualan, manajemen inventaris, dan pelaporan keuangan harian secara real-time.</p>
+            </section>
+
+            <!-- ================= CONCEPT UI ================= -->
+            <section class="mb-24 reveal fade-up">
+                <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-12 text-center flex justify-center items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-4xl">design_services</span> Konsep Antarmuka
+                </h2>
+                
+                <!-- Screenshots Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Transaksi -->
+                    <div class="group relative rounded-3xl overflow-hidden border border-white/10 bg-surface-container aspect-[16/10] shadow-xl">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-container-high to-background">
+                            <span class="material-symbols-outlined text-[100px] text-white/5 group-hover:scale-110 transition-transform duration-700">point_of_sale</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-6 md:p-8">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h4 class="font-headline font-bold text-white text-xl mb-1">Kasir & Transaksi</h4>
+                                <p class="text-primary font-label text-xs uppercase">Proses checkout yang cepat dan intuitif</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Inventaris -->
+                    <div class="group relative rounded-3xl overflow-hidden border border-white/10 bg-surface-container aspect-[16/10] shadow-xl">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-bl from-surface-container-high to-background">
+                            <span class="material-symbols-outlined text-[100px] text-white/5 group-hover:scale-110 transition-transform duration-700">inventory_2</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-6 md:p-8">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h4 class="font-headline font-bold text-white text-xl mb-1">Manajemen Stok</h4>
+                                <p class="text-primary font-label text-xs uppercase">Pantau ketersediaan barang secara langsung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Stack -->
+            <section class="mb-20 reveal fade-up">
+                <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-12 text-center">Infrastruktur Teknologi</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-surface-container border border-white/10 rounded-2xl p-8 hover:border-primary/30 transition-colors">
+                        <h3 class="font-headline font-bold text-primary mb-6 text-lg uppercase tracking-wide">Core Engine</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> C# & .NET Core</li>
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Arsitektur MVVM</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-container border border-white/10 rounded-2xl p-8 hover:border-primary/30 transition-colors">
+                        <h3 class="font-headline font-bold text-primary mb-6 text-lg uppercase tracking-wide">Database</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> SQL Server / SQLite</li>
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Entity Framework Core</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-container border border-white/10 rounded-2xl p-8 hover:border-primary/30 transition-colors">
+                        <h3 class="font-headline font-bold text-primary mb-6 text-lg uppercase tracking-wide">UI & Output</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> WPF.NET Desktop GUI</li>
+                            <li class="flex items-center gap-3 text-slate-300"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Integrasi Thermal Printer</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fitur Utama -->
+            <section class="mb-20 reveal fade-up">
+                <div class="bg-surface-container-low border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
+                    
+                    <h2 class="font-headline text-3xl font-bold text-white mb-8">Fitur & Cakupan Proyek</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined">point_of_sale</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Transaksi Cepat</h4>
+                                    <p class="text-sm text-slate-400">Pencarian produk instan dan kalkulasi otomatis untuk mempercepat antrean.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined">receipt_long</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Cetak Struk Thermal</h4>
+                                    <p class="text-sm text-slate-400">Dukungan format struk yang dapat disesuaikan untuk printer kasir thermal.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined">inventory_2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Manajemen Stok Real-time</h4>
+                                    <p class="text-sm text-slate-400">Pengurangan stok otomatis setiap ada transaksi dan peringatan saat stok menipis.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined">analytics</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Laporan Penjualan</h4>
+                                    <p class="text-sm text-slate-400">Grafik dan data penjualan harian, mingguan, dan bulanan yang mudah diakses.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 rounded-3xl p-12 text-center reveal fade-up">
+                <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-4">Tertarik dengan Skala Proyek Ini?</h2>
+                <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">Mari eksplorasi arsitektur lain yang saya rancang atau mulai kolaborasi baru.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../../index.html#gallery" class="inline-flex items-center justify-center gap-2 bg-primary text-black font-headline font-bold px-8 py-3 rounded-lg hover:shadow-[0_0_20px_rgba(161,166,255,0.4)] transition-all">
+                        <span class="material-symbols-outlined">arrow_back</span> Kembali ke Portfolio
+                    </a>
+                    <a href="../../index.html#contact" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-headline font-bold px-8 py-3 rounded-lg hover:bg-white/20 transition-colors">
+                        <span class="material-symbols-outlined">mail</span> Hubungi Saya
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-8 bg-black border-t border-white/5 font-label uppercase tracking-widest text-[10px] md:text-xs text-slate-500 text-center">
+        <p>© 2026 Kamaludin. POS Project Highlight. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Efek reveal pada saat scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        reveals.forEach(reveal => revealOnScroll.observe(reveal));
+    </script>
+</body>
+</html>
